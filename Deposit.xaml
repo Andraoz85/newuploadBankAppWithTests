@@ -1,0 +1,58 @@
+﻿<Window x:Class="ATMApp.Deposit"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ATMApp"
+        mc:Ignorable="d"
+        Title="Deposit" Height="450" Width="800" HorizontalAlignment="Center" Background="AliceBlue" 
+        WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Sätt in önskat belopp" Grid.ColumnSpan="3" 
+                   FontSize="40" FontWeight="Bold" HorizontalAlignment="Center"
+                   Margin="0 30"/>
+        <TextBlock Text="SEK:" Grid.Row="1" 
+                   FontSize="20" HorizontalAlignment="Right"
+                   Margin="10 40 20 10"/>
+
+        <TextBlock Text="Mottagare:" Grid.Row="2"
+                   FontSize="20" HorizontalAlignment="Right"
+                   Margin="10 40 20 10"/>
+
+        <TextBlock Text="Saldo:" Grid.Row="3"
+                   FontSize="20" HorizontalAlignment="Right"
+                   Margin="10 40 20 10"/>
+
+        <TextBox x:Name="DepositAmount" Grid.Column="1" Grid.Row="1" Margin="0 30 50 30" 
+                  TextAlignment="Left" FontSize="30" TextChanged="DepositAmount_TextChanged" />
+
+        <TextBox x:Name="AccountReciever" Grid.Column="1" Grid.Row="2" Margin="0 30 50 30" 
+                  TextAlignment="Left" FontSize="30" />
+
+        <TextBox x:Name="AccountBalance" Grid.Column="1" Grid.Row="3" Margin="0 30 50 30"
+                 TextAlignment="Left" FontSize="30" />
+
+        <Button x:Name="ConfirmDepositBtn" Content="OK" Grid.Column="2" Grid.Row="1" 
+                Margin="30 30 170 30" FontSize="30" Click="ConfirmDepositBtn_Click" />
+
+        <Button x:Name="Return" Click="Return_Click" Grid.Column="2" Grid.Row="3"
+                Height="50" Width="60" >
+            <Image Source="Resources/return.jpg"/>
+        </Button>
+        <!--
+        <Image Grid.Column="2"  Grid.Row ="1"  Source="/Resources/bank.png" Stretch="Fill"/>
+        -->
+
+    </Grid>
+</Window>
